@@ -1,0 +1,186 @@
+body{
+  margin-bottom: 1000px;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+
+}
+.box1,.box2,.box3,.box4,.box5,.box6, .box7, .box8, .box9, .box10{
+  width: 200px;
+  height: 50px;
+  border: 2px solid ;
+  background-color: coral;
+
+}
+.box1{
+  transition: background-color 2s ease 2s, width 2s ease 2s;
+}
+.box2{
+  transition: background-color 2s ease, width 2s ease-in;
+}
+.box3{
+  transition: background-color 2s ease, width 2s ease-in-out;
+}
+.box4{
+  transition: background-color 2s ease, width 2s ease-out;
+}
+.box5{
+  transition: background-color 2s ease, width 2s linear;
+}
+.box6{
+  transition: background-color 2s ease, width 2s step-start;
+}
+.box7{
+  transition: background-color 2s ease, width 2s step-end;
+}
+.box8{
+  transition: background-color 2s ease, width 2s steps(20, start);
+}
+.box9{
+  transition: background-color 2s ease, width 2s steps(5, end);
+}
+.box10{
+  transition: background-color 2s ease, transform 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.box1:hover,.box2:hover, .box3:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover,.box7:hover, .box8:hover, .box9:hover, .box10:hover{
+  background-color: aqua;
+  width: 500px;
+  display: block;
+  /* transform: scale(1.2) rotate(15deg); */
+  
+}
+.transform_container{
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px;
+  column-gap: 170px;
+}
+.item1, .item2, .item3, .item4, .item5{
+  border: 2px solid;
+  width: 200px;
+  height: 200px;
+  background-color: darkkhaki;
+  transition: transform 2s;
+  
+}
+.item1:hover{
+  transform: translate(50px, 100px);
+}
+
+.item2:hover{
+  transform: scale(2, 2);
+}
+.item3:hover{
+  transform: rotate(90deg);
+}
+.item4:hover{
+  transform: skew(10deg, 30deg);
+}
+.item5:hover{
+  transform: matrix(1, 0, 0, 1, 50, 100);
+}
+
+/* real worlf flip card example */
+/* .card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  border: 2px solid;
+  background-color: bisque;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: lightgreen;
+} */
+.td-transform{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.titem1, .titem2, .titem3{
+  border: 2px solid;
+  background-color: cornflowerblue;
+  width: 200px;
+  height: 200px;
+  transition: all 2s;
+}
+.titem1:hover, .titem2:hover{
+  transform: rotateY(180deg);
+  background-color: blueviolet;
+}
+.titem2:hover{
+  transform: perspective(180deg);
+  background-color: blueviolet;
+  transform-style: preserve-3d;
+}
+.anim1{
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  animation-name: color-change;
+  animation-duration: 2s;
+
+}
+@keyframes color-change{
+  0% {
+    color: blue;
+    font-size: 100px;
+
+  }
+  100% {
+    color: aqua;
+    font-size: 300px;
+    transform: translate(50px ,100px);
+  }
+}
+
+.anim2{
+  width: 200px;
+  height: 200px;
+  background-color: darkslategrey;
+  color: white;
+  animation: animate 3s ease 1s infinite alternate;
+}
+@keyframes animate{
+  50%{
+    transform: rotate(180deg);
+    background-color: chartreuse;
+  }
+}
+.anim3{
+  width: 200px;
+  height: 200px;
+  background-color:hotpink;
+  color: white;
+  animation: animate 3s ease 1s infinite alternate paused;
+}
+.anim3:hover{
+  animation-play-state: running;
+}
+@keyframes animate{
+  50%{
+    transform: rotate(180deg);
+    background-color: chartreuse;
+  }
+}
